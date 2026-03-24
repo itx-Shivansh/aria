@@ -30,7 +30,7 @@ function App() {
     primaryProvider: "ollama",
     fallbackProvider: "groq",
     ollamaBaseUrl: "http://127.0.0.1:11434",
-    ollamaModel: "llama3.1:8b",
+    ollamaModel: "llama3",
     groqApiKey: "",
     groqModel: "llama-3.1-8b-instant",
     temperature: 0.4

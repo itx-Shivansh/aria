@@ -89,14 +89,14 @@ function loadConfig() {
   }
 }
 
-function formatProvider(provider, model) {
+function formatProvider(provider) {
   if (provider === "groq") {
-    return `☁️ Groq ${model || ""}`.trim();
+    return "⚡ ARIA  •  Cloud";
   }
   if (provider === "ollama") {
-    return `🖥 Ollama ${model || ""}`.trim();
+    return "⚡ ARIA  •  Local";
   }
-  return "🖥 Ollama llama3";
+  return "⚡ ARIA";
 }
 
 function ChatWindow({ onOpenSettings }) {
@@ -120,7 +120,7 @@ function ChatWindow({ onOpenSettings }) {
   const [messages, setMessages] = useState([]);
   const [isStreaming, setIsStreaming] = useState(false);
   const [currentIntent, setCurrentIntent] = useState("chat");
-  const [providerUsed, setProviderUsed] = useState("🖥 Ollama llama3");
+  const [providerUsed, setProviderUsed] = useState("⚡ ARIA");
   const [offlineBanner, setOfflineBanner] = useState(false);
   const activeRunIdRef = useRef(null);
   const activeAssistantIdRef = useRef(null);
@@ -153,7 +153,7 @@ function ChatWindow({ onOpenSettings }) {
 
       setIsStreaming(false);
       setCurrentIntent(intent || "chat");
-      setProviderUsed(formatProvider(provider, model));
+      setProviderUsed(formatProvider(provider));
 
       const assistantId = activeAssistantIdRef.current;
       setMessages((prev) =>
@@ -299,7 +299,7 @@ function ChatWindow({ onOpenSettings }) {
 
       activeRunIdRef.current = result.runId;
       setCurrentIntent(result.intent || assistantMessage.intent);
-      setProviderUsed(formatProvider(result.provider, result.model));
+      setProviderUsed(formatProvider(result.provider));
       setMessages((prev) =>
         prev.map((item) =>
           item.id === assistantMessage.id
@@ -356,7 +356,7 @@ function ChatWindow({ onOpenSettings }) {
 
       {offlineBanner && (
         <div className="offline-banner">
-          ⚙️ ARIA needs a brain. Start Ollama or add a Groq key in Settings -&gt;
+          ⚙️ ARIA needs setup. Open Settings to continue -&gt;
         </div>
       )}
 
@@ -381,7 +381,7 @@ function ChatWindow({ onOpenSettings }) {
               <span>{message.role === "user" ? "You" : "ARIA"}</span>
               {message.role === "assistant" && (
                 <div className="assistant-tools">
-                  <span className="mini-badge">{formatProvider(message.provider, "")}</span>
+                  <span className="mini-badge">⚡ ARIA</span>
                   <span className="mini-badge">{INTENT_LABELS[message.intent] || "💬 Chat"}</span>
                   <button type="button" onClick={() => copyMessage(message.content)}>
                     Copy

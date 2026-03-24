@@ -41,6 +41,7 @@ function getRendererTarget() {
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
+    title: electronConfig.window.title || "ARIA",
     width: electronConfig.window.width,
     height: electronConfig.window.height,
     minWidth: electronConfig.window.minWidth,

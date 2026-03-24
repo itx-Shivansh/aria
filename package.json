@@ -2,7 +2,8 @@
   "name": "aria",
   "version": "0.1.0",
   "private": true,
-  "description": "ARIA desktop assistant powered by Electron, React, and Vite",
+  "description": "ARIA — Personal AI by Shivansh Raj",
+  "productName": "ARIA",
   "type": "module",
   "main": "src/main.js",
   "scripts": {

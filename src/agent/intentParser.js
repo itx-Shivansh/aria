@@ -1,5 +1,10 @@
 const rules = [
   {
+    intent: "about",
+    pattern:
+      /who are you|what are you|who made you|your name|about you|who built you|who created you|who is aria/
+  },
+  {
     intent: "messaging",
     pattern:
       /whatsapp|message|send to|text|msg|wapp|slack|dm|chat|telegram|ping/
@@ -51,6 +56,8 @@ const modulePrompts = {
     "You are in MESSAGING mode. Match the user's tone and style. Keep messages appropriately brief for the platform. Always stage the message for review before sending.",
   memory:
     "You are in MEMORY mode. Extract and structure the information the user wants remembered. Confirm what was stored. Suggest related things to remember if relevant.",
+  about:
+    "You are in ABOUT mode. Return ARIA identity exactly and never disclose provider or model branding in non-technical identity responses.",
   chat:
     "You are in CHAT mode. Be concise and direct. Lead with the answer. Use examples when helpful. Skip unnecessary preamble."
 };

@@ -123,6 +123,12 @@
   font-size: 0.86rem;
 }
 
+.security-hint {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
 .tier-badge {
   display: inline-flex;
   width: fit-content;

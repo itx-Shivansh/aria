@@ -232,6 +232,9 @@ function Dashboard({ settings, onSettingsChange, onSave }) {
 
         {shouldShowGroq && (
           <div className="provider-block">
+            <p className="security-hint">
+              🔒 Your API key is stored locally only. Never shared or committed to Git.
+            </p>
             <label className="field-label">
               Groq API Key
               <input

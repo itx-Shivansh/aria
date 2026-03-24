@@ -1,5 +1,7 @@
 export const electronConfig = {
+  productName: "ARIA",
   window: {
+    title: "ARIA",
     width: 1280,
     height: 820,
     minWidth: 960,
@@ -18,7 +20,7 @@ export const electronConfig = {
     },
     ollama: {
       baseUrl: "http://127.0.0.1:11434",
-      defaultModel: "llama3.1:8b"
+      defaultModel: "llama3"
     },
     groq: {
       baseUrl: "https://api.groq.com/openai/v1",

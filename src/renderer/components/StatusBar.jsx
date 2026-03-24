@@ -11,7 +11,7 @@ function StatusBar({ text }) {
         background: "rgba(2, 6, 23, 0.6)"
       }}
     >
-      Status: {text}
+      Status: ARIA ready
     </footer>
   );
 }
