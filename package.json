@@ -1,0 +1,36 @@
+{
+  "name": "aria",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ARIA desktop assistant powered by Electron, React, and Vite",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:renderer\" \"npm:dev:electron\"",
+    "dev:renderer": "vite --config vite.renderer.config.js",
+    "dev:electron": "wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .",
+    "start": "electron .",
+    "build": "vite build --config vite.renderer.config.js",
+    "preview": "vite preview --config vite.renderer.config.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "marked": "^15.0.12",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "whatsapp-web.js": "^1.34.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^31.7.7",
+    "vite": "^5.4.14",
+    "wait-on": "^8.0.3"
+  }
+}
